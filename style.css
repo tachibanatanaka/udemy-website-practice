@@ -1,0 +1,327 @@
+@charset "utf-8";
+
+/* ========================================
+    リセットcss
+========================================= */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+html {
+  overflow-y: scroll;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+input,
+textarea {
+  margin: 0;
+  padding: 0;
+}
+ol,
+ul {
+  list-style: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+caption,
+th {
+  text-align: left;
+}
+a:focus {
+  outline: none;
+}
+
+/* ========================================
+	フロートの解除
+========================================= */
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* ========================================
+	全体設計
+========================================= */
+body {
+  color: #555;
+  font-size: 14px;
+  line-height: 1;
+  font-family: "メイリオ", Meiryo;
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+#wrapper {
+  width: 980px;
+  height: auto;
+  margin: 0 auto;
+}
+header {
+  width: 960px;
+  height: 90px;
+  /* background-color: pink; */
+}
+header h1 {
+  width: 213px;
+  height: 39px;
+  margin-top: 30px;
+}
+#wrapper .link {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: flex-end;
+  /* 子要素にflexboxを適応したいので、親要素にflexboxを掛けている。 */
+}
+nav ul li a {
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 20px;
+  /* margin-leftで、間隔を揃えている。 */
+}
+#mainimage {
+  width: 960px;
+  height: 300px;
+  background-color: skyblue;
+  margin-bottom: 30px;
+}
+#left {
+  width: 280px;
+  height: auto;
+  /* 中身に応じて高さを調整 */
+  /* background-color: gray; */
+  display: flex;
+  margin-right: 30px;
+}
+#left li {
+  width: 278px;
+  height: 48px;
+  /* borderプロパティの分、widthやheightを減らしている */
+  background-color: #f5fbff;
+  margin-bottom: 10px;
+  border: 1px solid #63abd4;
+}
+#left a {
+  /* 文字にCSSを適用したいのでaタグをコーティングしている */
+  font-size: 16px;
+  font-weight: bold;
+  color: #555555;
+  line-height: 50px;
+  /* 文字を真ん中に調節している */
+  /* background: url(images/icon_tel.png) no-repeat 14px center; */
+  /* 背景画像を指定できるプロパティ　no-repeatで一回だけ繰り返す */
+  padding-left: 50px;
+  /* 内側の余白を空けて写真と文字の距離を取っている */
+  display: block;
+  /* aタグ(インライン要素)にdisplay:block; を掛けることで、li要素全体がクリックイベントになっている。 */
+}
+#icon_tel {
+  background: url(images/icon_tel.png) no-repeat 14px center;
+  /* telの写真 */
+}
+#icon_blog {
+  background: url(images/icon_blog.png) no-repeat 14px center;
+  /* ブログの写真 */
+}
+#icon_voice {
+  background: url(images/icon_voice.png) no-repeat 14px center;
+  /* お客さんの写真 */
+}
+.right {
+  width: 650px;
+  height: auto;
+  /* background-color: red; */
+  margin-left: 30px;
+}
+h2 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #555555;
+  margin-bottom: 15px;
+}
+.right div {
+  display: flex;
+  /* flexboxを適用したいためにdivタグを作って、divタグにflexを適用 */
+}
+dt {
+  font-size: 12px;
+  color: #a8a8a8;
+  width: 94px;
+  flex-direction: row;
+  line-height: 40px;
+  /* 中央揃いにするため */
+  padding-left: 15px;
+}
+dd {
+  font-size: 13px;
+  color: #555555;
+  width: 556px;
+  flex-direction: row;
+  line-height: 40px;
+  /* 中央揃いにするため */
+}
+.a {
+  background-color: #f5f5f5;
+}
+#footer {
+  width: 100%;
+  height: auto;
+  background-color: #63abd4;
+  margin-top: 30px;
+}
+#box {
+  display: flex;
+  flex-direction: row;
+}
+/* ◦慣れないうちはBOXでレイアウトを考える */
+/* padding,marginの違い */
+/* →要素の外側の余白がmargin,要素の内側の余白がpadding */
+
+/* margin: 0 auto;とは？ */
+/* →margin: 0 auto 0 auto;　の略。上下のmarginが0、左右のmarginがautoでブラウザの大きさが変わってもスタイルが変わらないためにする。 */
+
+#footer_inner {
+  width: 960px;
+  margin: 0 auto;
+  position: relative;
+  padding: 20px 0;
+}
+#pagetop a {
+  width: 78px;
+  height: 20px;
+  background-color: #63abd4;
+  color: white;
+  text-align: center;
+  /* 文字を真ん中に */
+  display: block;
+  line-height: 20px;
+  position: absolute;
+  top: -20px;
+  right: 0;
+  /* padding-left: 5px; */
+}
+#footer .link {
+  display: flex;
+  justify-content: flex-end;
+  padding-left: 20px;
+}
+#footer ul li {
+  margin-left: 20px;
+}
+#footer ul li a {
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
